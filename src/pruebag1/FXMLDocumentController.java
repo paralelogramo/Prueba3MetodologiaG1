@@ -33,4 +33,35 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }    
     
+    public void despejarCampo(){
+        
+    }
+    
+    public void descubrirCasillaSN(){
+        
+    }
+    
+    public void descubrirCasillaCN(){
+        
+    }
+    
+    public void verificarVirus(){
+        
+    }
+    
+    public void verificarContinuidad(){
+        
+    }
+    
+    public void contarPuntaje(){
+        
+    }
+    
+    public void calcularTiempo(){
+        
+    }
+    
+    public void colocarVirusAzar(){
+        
+    }
 }
