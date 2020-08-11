@@ -127,7 +127,16 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public void contarPuntaje(){
-        
+        Text t = new Text("");
+        int cantBanderas = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                if (matriz[i][j].getBandera()) {
+                    cantBanderas++;
+                }
+            }
+        }
+        t.setText("Quedan: "+cantBanderas+" Virus");
     }
     
     public void calcularTiempo(){
