@@ -11,7 +11,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -21,7 +24,10 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     AnchorPane panel;
-    
+    @FXML
+    GridPane gp;
+    int numero = 0;
+    Objeto[][] matriz;
     @FXML
     private void Start(ActionEvent event) {
         
@@ -31,10 +37,11 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        Objeto tablero[][] = new Objeto[numero][numero];
     }    
     
     public void despejarCampo(){
-        
+
     }
     
     public void descubrirCasillaSN(){
@@ -58,10 +65,66 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public void calcularTiempo(){
+        long tiempo = System.currentTimeMillis()/1000;
         
     }
     
     public void colocarVirusAzar(){
+        //VERSION 1.0
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                matriz[i][j]=null;
+            }
+        }
+        gp = new GridPane();
+        Text t = new Text("");
+        Image imagen = null;
         
+        String[] dif = t.getText().split(" ");
+        
+        switch (dif[2]) {
+            case "Facil":
+                this.matriz = new Objeto[9][9];
+                for (int i = 0; i < 25; i++) {
+                    int x = (int)(Math.random() *((8-0) +1))+0;
+                    int y = (int)(Math.random() *((8-0) +1))+0;
+                    if (matriz[x][y]==null) {
+                        i--;
+                    }
+                    else{
+                        matriz[x][y] = new Objeto(imagen, "Virus", (new Punto(x, y)));
+                        //GUARDAR EN EL GRIDPANE;
+                    }
+                }
+                break;
+            case "Normal":
+                this.matriz = new Objeto[16][16];
+                for (int i = 0; i < 100; i++) {
+                    int x = (int)(Math.random() *((8-0) +1))+0;
+                    int y = (int)(Math.random() *((8-0) +1))+0;
+                    if (matriz[x][y]==null) {
+                        i--;
+                    }
+                    else{
+                        matriz[x][y] = new Objeto(imagen, "Virus", (new Punto(x, y)));
+                        //GUARDAR EN EL GRIDPANE;
+                    }
+                }
+                break;
+            case "Dificil":
+                this.matriz = new Objeto[32][32];
+                for (int i = 0; i < 400; i++) {
+                    int x = (int)(Math.random() *((8-0) +1))+0;
+                    int y = (int)(Math.random() *((8-0) +1))+0;
+                    if (matriz[x][y]==null) {
+                        i--;
+                    }
+                    else{
+                        matriz[x][y] = new Objeto(imagen, "Virus", (new Punto(x, y)));
+                        //GUARDAR EN EL GRIDPANE;
+                    }
+                }
+                break;
+        }
     }
 }
