@@ -5,6 +5,7 @@
  */
 package pruebag1;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -31,6 +33,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     AnchorPane fondo;
     @FXML
+    Button button;
+    @FXML
     GridPane tableroFacil;
     @FXML
     GridPane tableroNormal;
@@ -39,6 +43,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     Text seleccionDificultad;
     
+    boolean sino = true;
     int dificultad = 1;
     
     @FXML
@@ -79,28 +84,34 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void menuJuego() throws IOException{
-            FXMLLoader loader = new FXMLLoader();
-            URL location = FXMLDocument2Controller.class.getResource("FXMLDocument2.fxml");
-            loader.setLocation(location);
-            Stage stage = new Stage();
-            stage.setTitle(" Busca Covit | Panel de Control");
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png"))); 
-            stage.setOpacity(1);
-            AnchorPane panelControl = loader.load();
-            Scene scene = new Scene(panelControl); 
-            stage.setScene(scene);
-            //stage.setOpacity(0.95);
-            stage.initOwner(this.fondo.getScene().getWindow());
-            stage.setResizable(false);
-            ((Stage)this.fondo.getScene().getWindow()).close();
-            stage.initStyle(StageStyle.TRANSPARENT);
-            stage.centerOnScreen();
-            stage.show();
+        this.sino = false;
+        FXMLLoader loader = new FXMLLoader();
+        URL location = FXMLDocument2Controller.class.getResource("FXMLDocument2.fxml");
+        loader.setLocation(location);
+        Stage stage = new Stage();
+        stage.setTitle(" Busca Covit | Panel de Control");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png"))); 
+        stage.setOpacity(1);
+        AnchorPane panelControl = loader.load();
+        Scene scene = new Scene(panelControl); 
+        stage.setScene(scene);
+        //stage.setOpacity(0.95);
+        stage.initOwner(this.fondo.getScene().getWindow());
+        stage.setResizable(false);
+        ((Stage)this.fondo.getScene().getWindow()).close();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.centerOnScreen();
+        stage.show();                        
+    }
+    
+    public void actualizar(){
+        this.button.setDisable(sino);
     }
     
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {       
+    public void initialize(URL url, ResourceBundle rb) {           
+        this.actualizar();
         this.tableroFacil.setVisible(true);
         this.tableroDificil.setVisible(false);
         this.tableroNormal.setVisible(false);              

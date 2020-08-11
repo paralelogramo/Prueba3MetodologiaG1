@@ -25,6 +25,7 @@ public class PruebaG1 extends Application {
         stage.setTitle(" Busca Covit | Home");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png"))); 
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

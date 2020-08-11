@@ -151,7 +151,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-              <Button fx:id="button" layoutX="365.0" layoutY="741.0" onAction="#start" text="Start">
+              <Button fx:id="button" disable="true" layoutX="365.0" layoutY="741.0" onAction="#start" text="Start">
                <effect>
                   <DropShadow />
                </effect></Button>
