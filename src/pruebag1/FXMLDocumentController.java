@@ -77,7 +77,26 @@ public class FXMLDocumentController implements Initializable {
         }       
     }
     
-    
+    @FXML
+    private void menuJuego() throws IOException{
+            FXMLLoader loader = new FXMLLoader();
+            URL location = FXMLDocument2Controller.class.getResource("FXMLDocument2.fxml");
+            loader.setLocation(location);
+            Stage stage = new Stage();
+            stage.setTitle(" Busca Covit | Panel de Control");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png"))); 
+            stage.setOpacity(1);
+            AnchorPane panelControl = loader.load();
+            Scene scene = new Scene(panelControl); 
+            stage.setScene(scene);
+            //stage.setOpacity(0.95);
+            stage.initOwner(this.fondo.getScene().getWindow());
+            stage.setResizable(false);
+            ((Stage)this.fondo.getScene().getWindow()).close();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.centerOnScreen();
+            stage.show();
+    }
     
     
     @Override
