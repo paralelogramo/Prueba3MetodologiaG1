@@ -15,11 +15,13 @@ public class Objeto {
     private Image imagen;
     private String accion;
     private Punto coordenada;
+    private boolean bandera;
 
     public Objeto(Image imagen, String accion, Punto coordenada) {
         this.imagen = imagen;
         this.accion = accion;
         this.coordenada = coordenada;
+        this.bandera = false;
     }
 
     public Image getImagen() {
