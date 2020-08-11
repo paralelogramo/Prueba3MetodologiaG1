@@ -15,7 +15,8 @@ import javafx.fxml.Initializable;
  * @author Asus-ROG
  */
 public class FXMLDocument2Controller implements Initializable {
-
+    @FXML
+    AnchorPane ap;
     /**
      * Initializes the controller class.
      */
@@ -23,5 +24,18 @@ public class FXMLDocument2Controller implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+
+
+    @FXML
+    private void cerrar() throws IOException{
+                FXMLLoader loader = new FXMLLoader();
+                URL location = FXMLDocumentController.class.getResource("FXMLDocument.fxml");
+                loader.setLocation(location);
+                Stage stage = new Stage();
+                stage.setTitle(" Busca Covit | Home");
+                stage.show();
+
+    }
     
 }
