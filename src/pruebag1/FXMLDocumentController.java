@@ -45,15 +45,14 @@ public class FXMLDocumentController implements Initializable {
         String[] dif = t.getText().split(" ");
         switch (dif[2]) {
             case "Facil":
-                this.matriz = new Objeto[9][9];
                 for (int i = 0; i < 81; i++) {
                     if (gp.getChildren().get(i).isPressed()) {
                         // revisar que es
+                        
                     }
                 }
                 break;
             case "Normal":
-                this.matriz = new Objeto[16][16];
                 for (int i = 0; i < 256; i++) {
                     if (gp.getChildren().get(i).isPressed()) {
                         // revisar que es
@@ -61,7 +60,6 @@ public class FXMLDocumentController implements Initializable {
                 }
                 break;
             case "Dificil":
-                this.matriz = new Objeto[32][32];
                 for (int i = 0; i < 1024; i++) {
                     if (gp.getChildren().get(i).isPressed()) {
                         // revisar que es
@@ -79,8 +77,47 @@ public class FXMLDocumentController implements Initializable {
         
     }
     
-    public void verificarVirus(){
-        
+    public void verificarVirus(){ //colocar bandera o quitar bandera
+        Text t = new Text("");
+        String[] dif = t.getText().split(" ");
+        switch (dif[2]) {
+            case "Facil":
+                for (int i = 0; i < 81; i++) {
+                    if (gp.getChildren().get(i).isPressed()) {
+                        int x = i/9-1;
+                        int y = i-9*x-1;
+                        if (matriz[x][y].getBandera()) {
+                            matriz[x][y].setBandera();
+                            // cambiar imagen en gridpane
+                        }
+                    }
+                }
+                break;
+            case "Normal":
+                for (int i = 0; i < 256; i++) {
+                    if (gp.getChildren().get(i).isPressed()) {
+                        int x = i/9-1;
+                        int y = i-9*x-1;
+                        if (matriz[x][y].getBandera()) {
+                            matriz[x][y].setBandera();
+                            // cambiar imagen en gridpane
+                        }
+                    }
+                }
+                break;
+            case "Dificil":
+                for (int i = 0; i < 1024; i++) {
+                    if (gp.getChildren().get(i).isPressed()) {
+                        int x = i/9-1;
+                        int y = i-9*x-1;
+                        if (matriz[x][y].getBandera()) {
+                            matriz[x][y].setBandera();
+                            // cambiar imagen en gridpane
+                        }
+                    }
+                }
+                break;
+        }
     }
     
     public void verificarContinuidad(){
