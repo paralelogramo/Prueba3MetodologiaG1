@@ -127,7 +127,7 @@ public class FXMLDocumentController implements Initializable {
             case "Facil":
                 this.matriz = new Objeto[9][9];
                 for (int i = 0; i < 81; i++) {
-                    if (gp.getChildren().get(i).isPressed()) {
+                    if (tableroFacil.getChildren().get(i).isPressed()) {
                         // revisar que es
                     }
                 }
@@ -135,7 +135,7 @@ public class FXMLDocumentController implements Initializable {
             case "Normal":
                 this.matriz = new Objeto[16][16];
                 for (int i = 0; i < 256; i++) {
-                    if (gp.getChildren().get(i).isPressed()) {
+                    if (tableroFacil.getChildren().get(i).isPressed()) {
                         // revisar que es
                     }
                 }
@@ -143,7 +143,7 @@ public class FXMLDocumentController implements Initializable {
             case "Dificil":
                 this.matriz = new Objeto[32][32];
                 for (int i = 0; i < 1024; i++) {
-                    if (gp.getChildren().get(i).isPressed()) {
+                    if (tableroFacil.getChildren().get(i).isPressed()) {
                         // revisar que es
                     }
                 }
@@ -165,7 +165,7 @@ public class FXMLDocumentController implements Initializable {
         switch (dif[2]) {
             case "Facil":
                 for (int i = 0; i < 81; i++) {
-                    if (gp.getChildren().get(i).isPressed()) {
+                    if (tableroFacil.getChildren().get(i).isPressed()) {
                         int x = i/9-1;
                         int y = i-9*x-1;
                         if (matriz[x][y].getBandera()) {
@@ -177,7 +177,7 @@ public class FXMLDocumentController implements Initializable {
                 break;
             case "Normal":
                 for (int i = 0; i < 256; i++) {
-                    if (gp.getChildren().get(i).isPressed()) {
+                    if (tableroFacil.getChildren().get(i).isPressed()) {
                         int x = i/9-1;
                         int y = i-9*x-1;
                         if (matriz[x][y].getBandera()) {
@@ -189,7 +189,7 @@ public class FXMLDocumentController implements Initializable {
                 break;
             case "Dificil":
                 for (int i = 0; i < 1024; i++) {
-                    if (gp.getChildren().get(i).isPressed()) {
+                    if (tableroFacil.getChildren().get(i).isPressed()) {
                         int x = i/9-1;
                         int y = i-9*x-1;
                         if (matriz[x][y].getBandera()) {
@@ -231,7 +231,7 @@ public class FXMLDocumentController implements Initializable {
                 matriz[i][j]=null;
             }
         }
-        gp = new GridPane();
+        tableroFacil = new GridPane();
         Text t = new Text("");
         Image imagen = null;
         
