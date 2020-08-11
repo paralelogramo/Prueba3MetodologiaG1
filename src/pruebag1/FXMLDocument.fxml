@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -150,13 +151,24 @@
                   <Font size="20.0" />
                </font>
             </Label>
-              <Button fx:id="button" layoutX="365.0" layoutY="741.0" onAction="#start" text="Start" />
-            <Button layoutX="489.0" layoutY="741.0" mnemonicParsing="false" onAction="#cambiarDificultad" text="Cambiar  Dificultad" />
-            <Text fx:id="seleccionDificultad" layoutX="627.0" layoutY="758.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dificultad : Facil">
+              <Button fx:id="button" layoutX="365.0" layoutY="741.0" onAction="#start" text="Start">
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button layoutX="504.0" layoutY="741.0" mnemonicParsing="false" onAction="#cambiarDificultad" text="Cambiar  Dificultad">
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Text fx:id="seleccionDificultad" layoutX="629.0" layoutY="759.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dificultad : Facil">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
+            <Button layoutX="79.0" layoutY="741.0" mnemonicParsing="false" onAction="#menuJuego" text="Menu Juego">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
          </children>
       </AnchorPane>
     </children>
