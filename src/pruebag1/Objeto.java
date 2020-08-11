@@ -47,7 +47,11 @@ public class Objeto {
     public void setCoordenada(Punto coordenada) {
         this.coordenada = coordenada;
     }
-    
-    
+    public void setBandera(){
+        this.bandera = !this.bandera;
+    }
+    public boolean getBandera(){
+        return this.bandera;
+    }
     
 }
