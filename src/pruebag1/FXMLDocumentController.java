@@ -45,14 +45,15 @@ public class FXMLDocumentController implements Initializable {
         String[] dif = t.getText().split(" ");
         switch (dif[2]) {
             case "Facil":
+                this.matriz = new Objeto[9][9];
                 for (int i = 0; i < 81; i++) {
                     if (gp.getChildren().get(i).isPressed()) {
                         // revisar que es
-                        
                     }
                 }
                 break;
             case "Normal":
+                this.matriz = new Objeto[16][16];
                 for (int i = 0; i < 256; i++) {
                     if (gp.getChildren().get(i).isPressed()) {
                         // revisar que es
@@ -60,6 +61,7 @@ public class FXMLDocumentController implements Initializable {
                 }
                 break;
             case "Dificil":
+                this.matriz = new Objeto[32][32];
                 for (int i = 0; i < 1024; i++) {
                     if (gp.getChildren().get(i).isPressed()) {
                         // revisar que es
